@@ -12,6 +12,10 @@ module PrixFixe
       def h(text)
         Rack::Utils.escape_html(text)
       end
+
+      def ga_ua
+        ENV['GA_UA'] || ''
+      end
     end
 
     get '/' do
