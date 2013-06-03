@@ -27,7 +27,7 @@ module PrixFixe
         erb :home
       else
         begin
-          namespacer = PrixFixe::Namespacer.new(params['source'])
+          namespacer = Namespacer.new(params['source'])
           namespacer.prefix = params['prefix']
           @css = namespacer.render(:scss)
           erb :result
