@@ -11,6 +11,9 @@ module PrixFixe
     def validate
       add_error(:source, 'You must provide CSS to process') if blank?(@source)
       add_error(:prefix, 'You must provide a prefix') if blank?(@prefix)
+      if !blank?(@prefix) && !/\A[a-zA-Z0-9]+\z/.match(@prefix)
+        add_error(:prefix, 'Only letters and numbers can be used as a prefix')
+      end
       !errors?
     end
 

@@ -17,42 +17,49 @@ module PrixFixe
       form = Form.new(prefix: 'foo')
 
       assert !form.validate
-      assert !form.errors[:source].nil?
+      assert_match /provide CSS/, form.errors[:source]
     end
 
     it 'validates source when it is an empty string' do
       form = Form.new(source: '', prefix: 'pre')
 
       assert !form.validate
-      assert !form.errors[:source].nil?
+      assert_match /provide CSS/, form.errors[:source]
     end
 
     it 'validates source when it is whitespace' do
       form = Form.new(source: '  ', prefix: 'pre')
 
       assert !form.validate
-      assert !form.errors[:source].nil?
+      assert_match /provide CSS/, form.errors[:source]
     end
 
     it 'validates prefix when it does not exist' do
       form = Form.new(source: 'foo')
 
       assert !form.validate
-      assert !form.errors[:prefix].nil?
+      assert_match /provide a prefix/, form.errors[:prefix]
     end
 
     it 'validates prefix when it is an empty string' do
       form = Form.new(source: 'foo', prefix: '')
 
       assert !form.validate
-      assert !form.errors[:prefix].nil?
+      assert_match /provide a prefix/, form.errors[:prefix]
     end
 
     it 'validates prefix when it is whitespace' do
       form = Form.new(source: 'foo', prefix: '  ')
 
       assert !form.validate
-      assert !form.errors[:prefix].nil?
+      assert_match /provide a prefix/, form.errors[:prefix]
+    end
+
+    it 'only allows valid prefixes' do
+      form = Form.new(source: 'foo', prefix: 'n.')
+
+      assert !form.validate
+      assert_match /letters and numbers/, form.errors[:prefix]
     end
   end
 end
