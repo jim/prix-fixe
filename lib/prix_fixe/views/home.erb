@@ -1,0 +1,45 @@
+<h2>Take control of CSS framework stylesheets</h2>
+
+<p>
+  <em>Have you ever wanted to use a CSS framework for a project, but its authors insisted upon
+    using lots of common class names in the global namespace?</em> Maybe you'd like to use
+  their styles, but <code>.button</code> already means something to your app? Or perhaps
+  you'd like it to be more obvious whether a class was provided by framework or
+  application styles?
+</p>
+
+<p>
+  <em>This tool will prepend all class names in a stylesheet with the prefix of your choice.</em>
+  So you'll know the <code>.bt-button</code> class is from a framework and not your application code.
+</p>
+
+<form action="process" method="POST">
+  <% if @form.errors? %>
+    <div class="errors">
+      <h3>Unfortunately, we could not complete your request:</h3>
+      <ul>
+        <% @form.errors.each do |field,error| %>
+          <li><%= error %>.</li>
+         <% end %>
+       </ul>
+     </div>
+  <% end %>
+
+  <ol class="steps">
+    <li>
+      <label>
+        <span>Paste your stylesheet into this box:</span>
+        <textarea name="source"><%= h @form.source %></textarea>
+      </label>
+    </li>
+    <li>
+      <label>
+        <span>Select the CSS class prefix of your choice:</span>
+        <input name="prefix" placeholder="acme" value="<%= h @form.prefix %>">
+        <span class="hint">A dash will be appended automatically.</span>
+      </label>
+    </li>
+    <li><button type="submit">Make it so.</button></li>
+  </ol>
+</form>
+

@@ -1,0 +1,124 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  padding: 2.4rem 0 2.4rem;
+}
+
+h1 {
+  background: url(../flourish4.svg) left top no-repeat;
+  background-size: contain;
+  height: 16rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+h1 span {
+  padding: 7rem 0 0 13rem;
+  display: block;
+}
+
+h1 a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #666;
+}
+
+.site {
+  margin: 2rem auto;
+  width: 70%;
+}
+
+code {
+  font-weight: bold;
+}
+
+em {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ol.steps {
+  list-style: decimal;
+  margin: 2rem 0 0 2rem;
+}
+
+ol.steps li {
+  margin-bottom: 2rem;
+}
+
+textarea, input {
+  font-family: Menlo, Courier, "Courier New", monospace;
+  padding: .2rem;
+  border: solid black .1rem;
+  margin-top: .5rem;
+}
+
+textarea[name="source"] {
+  width: 95%;
+  height: 8rem;
+}
+
+textarea[name="result"] {
+  width: 95%;
+  height: 16rem;
+}
+
+input[name="prefix"] {
+  width: 50%;
+  display: block;
+  font-size: 1.6rem;
+}
+
+span.hint {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.errors {
+  color: firebrick;
+}
+
+.errors h3 {
+  font-weight: bold;
+}
+
+button {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.6rem;
+  background: black;
+  border: solid 0.2rem black;
+  color: white;
+  padding: 0.8rem 1.8rem;
+}
+
+button:hover {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+footer {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 12.8rem;
+}

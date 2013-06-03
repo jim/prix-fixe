@@ -1,0 +1,9 @@
+<script type="text/javascript">
+  $(function() {
+    $("textarea[name='result']").select();
+  });
+</script>
+
+<h2>Your freshly prefixed styles:</h2>
+
+<textarea name="result"><%= h(@css) %></textarea>
