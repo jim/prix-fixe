@@ -6,6 +6,8 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sass'
 
+gem 'unicorn'
+
 group :test do
   gem 'minitest'
   gem 'nokogiri'
