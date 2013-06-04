@@ -6,6 +6,7 @@ require 'prix_fixe/form'
 module PrixFixe
   class Web < Sinatra::Application
 
+    set :root, File.expand_path('..', __FILE__)
     set :views, settings.root + '/views'
 
     configure :production do
