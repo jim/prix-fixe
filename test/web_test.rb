@@ -55,6 +55,14 @@ VAL
       assert_match /You must provide CSS/, last_response.body
       assert_match /You must provide a prefix/, last_response.body
     end
+
+
+    it 'handles a 404' do
+      get '/doe_not_exist'
+
+      assert_equal 404, last_response.status
+      assert_match /is not here/, last_response.body
+    end
   end
 
 end
