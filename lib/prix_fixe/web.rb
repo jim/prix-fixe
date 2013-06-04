@@ -8,6 +8,12 @@ module PrixFixe
 
     set :views, settings.root + '/views'
 
+    configure :production do
+      Raven.configure do |config|
+        config.dsn = ENV['SENTRY_DSN']
+      end
+    end
+
     helpers do
       def h(text)
         Rack::Utils.escape_html(text)

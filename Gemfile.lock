@@ -1,10 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    backports (3.3.1)
-    eventmachine (1.0.3)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
+    hashie (2.0.5)
     kgio (2.7.4)
     minitest (5.0.2)
+    multi_json (1.7.5)
+    multipart-post (1.2.0)
     nokogiri (1.5.9)
     rack (1.5.2)
     rack-protection (1.5.0)
@@ -12,23 +15,23 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     raindrops (0.9.0)
+    rake (10.0.4)
     sass (3.2.9)
+    sentry-raven (0.4.8)
+      faraday (>= 0.7.6)
+      hashie (>= 1.1.0)
+      multi_json (~> 1.0)
+      uuidtools
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    sinatra-contrib (1.4.0)
-      backports (>= 2.0)
-      eventmachine
-      rack-protection
-      rack-test
-      sinatra (~> 1.4.2)
-      tilt (~> 1.3)
     tilt (1.4.1)
     unicorn (4.3.1)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uuidtools (2.1.4)
 
 PLATFORMS
   ruby
@@ -36,7 +39,9 @@ PLATFORMS
 DEPENDENCIES
   minitest
   nokogiri
+  rack-test
+  rake
   sass
+  sentry-raven
   sinatra
-  sinatra-contrib
   unicorn
